@@ -1,16 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link, NavLink } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import classNames from 'classnames';
+import React from "react";
+import styled from "styled-components";
+import { Link, NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import classNames from "classnames";
 
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch } from "react-icons/fa";
 
-import fontSize from '../styles/fontSize';
-import { color } from '../styles/color';
-import logo from '../images/logo.png';
+import fontSize from "../styles/fontSize";
+import { color } from "../styles/color";
+import logo from "../images/logo.png";
 
-const { primary, dark, light } = color;
+const { primary, dark, light } = color; //
 
 const HeaderBox = styled.header`
   .site-top {
@@ -50,7 +50,7 @@ const HeaderBox = styled.header`
           width: 45px;
         }
 
-        input[type='text'] {
+        input[type="text"] {
           flex-grow: 1;
         }
       }
@@ -69,20 +69,20 @@ const Header = () => {
             to="/member/join"
             className={({ isActive }) => classNames({ on: isActive })}
           >
-            {t('회원가입')}
+            {t("회원가입")}
           </NavLink>
           <NavLink
             to="/member/login"
             className={({ isActive }) => classNames({ on: isActive })}
           >
-            {t('로그인')}
+            {t("로그인")}
           </NavLink>
         </div>
       </section>
       <section className="logo-search">
         <div className="layout-width">
           <Link to="/">
-            <img src={logo} alt={t('로고')} />
+            <img src={logo} alt={t("로고")} />
           </Link>
 
           <form autoComplete="off">
