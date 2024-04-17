@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import JoinForm from '../components/JoinForm';
 
@@ -33,7 +33,7 @@ const JoinContainer = () => {
       e.preventDefault();
 
       const _errors = {};
-      let hasErrors = false; //에러유무
+      let hasErrors = false; // 에러 유무
 
       /* 데이터 검증 - 필수 항목 체크 S */
       const requiredFields = {
@@ -68,13 +68,15 @@ const JoinContainer = () => {
 
       setErrors(_errors);
 
-      if (hasErrors) { // 검증 실패시 가입 처리 X
+      if (hasErrors) {
+        // 검증 실패시 가입 처리 X
         return;
       }
 
-      /* 가입 처리*/ 
-      /*가입 완료 후 로그인 페이지 이동*/
-      navigate("/member/login", { replace : true }); // replace : true -> 방문기록 X
+      /* 가입처리 */
+
+      /* 가입완료 후 로그인 페이지 이동 */
+      navigate('/member/login', { replace: true }); // replace: true -> 방문기록 X
     },
     [t, form, navigate],
   );
