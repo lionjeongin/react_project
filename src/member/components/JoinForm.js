@@ -90,8 +90,13 @@ const JoinForm = ({ form, onSubmit, onChange, onToggle, onReset, errors }) => {
       <dl>
         <dt>{t('휴대전화번호')}</dt>
         <dd>
-          <InputBox type="text" name="mobile" value={form.mobile ?? ''} onChange={onChange}/>
-          <MessageBox messages={errors.mobile} color='danger' />
+          <InputBox
+            type="text"
+            name="mobile"
+            value={form.mobile ?? ''}
+            onChange={onChange}
+          />
+          <MessageBox messages={errors.mobile} color="danger" />
         </dd>
       </dl>
       <div className="terms-agree" onClick={onToggle}>
