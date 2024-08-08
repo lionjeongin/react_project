@@ -30,5 +30,5 @@ export const apiUser = () =>
         console.log(res.data.data);
         resolve(res.data.data);
       })
-      .catch((err) => console.log('err', err));
+      .catch((err) => console.log('err', err)); 
   });
