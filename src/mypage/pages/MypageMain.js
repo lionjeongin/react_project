@@ -1,12 +1,12 @@
-import React from "react";
-import MemberOnly from "../../commons/components/auth/MemberOnly";
+import React from 'react';
+import MemberOnlyContainer from '../../member/containers/MemberOnlyContainer';
 
 const MypageMain = () => {
-    return (
-        <MemberOnly>
-            <h1>마이페이지</h1>
-        </MemberOnly>
-    );
+  return (
+    <MemberOnlyContainer>
+      <h1>마이페이지</h1>
+    </MemberOnlyContainer>
+  );
 };
 
 export default React.memo(MypageMain);
