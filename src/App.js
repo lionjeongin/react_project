@@ -18,6 +18,10 @@ const MypageMain = loadable(() => import('./mypage/pages/MypageMain'));
 const News = loadable(() => import('./news/pages/News'));
 /* 뉴스 페이지 E */
 
+/* 예약 페이지 S */
+const Reserve = loadable(() => import('./reserve/pages/Reserve'));
+/* 예약 페이지 E */
+
 const App = () => {
   return (
     <Routes>
@@ -37,6 +41,10 @@ const App = () => {
         {/* 뉴스 페이지  */}
         <Route path="news">
           <Route path=":category?" element={<News />} />
+        </Route>
+        {/* 예약 페이지 */}
+        <Route path="reserve">
+          <Route index element={<Reserve />} />
         </Route>
         <Route path="*" element={<NotFound />} /> {/* 없는 페이지 */}
       </Route>
