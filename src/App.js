@@ -19,10 +19,15 @@ const MypageMain = loadable(() => import('./mypage/pages/MypageMain'));
 /* 뉴스 페이지 S */
 const News = loadable(() => import('./news/pages/News'));
 /* 뉴스 페이지 E */
-
+ 
 /* 예약 페이지 S */
 const Reserve = loadable(() => import('./reserve/pages/Reserve'));
 /* 예약 페이지 E */
+
+/* 식당 페이지 S */
+const RestaurantList = loadable(() => import('./restaurant/pages/RestaurantList'));
+const RestaurantView = loadable(() => import('./restaurant/pages/RestaurantView'));
+/* 식당 페이지 E */
 
 const App = () => {
   return (
@@ -47,6 +52,11 @@ const App = () => {
         {/* 예약 페이지 */}
         <Route path="reserve">
           <Route index element={<Reserve />} />
+        </Route>
+        {/* 식당 페이지 */}
+        <Route path="restaurant">
+          <Route index element={<RestaurantList/>} />
+          <Route path=":id" element={<RestaurantView/>} />
         </Route>
         <Route path="*" element={<NotFound />} /> {/* 없는 페이지 */}
       </Route>
