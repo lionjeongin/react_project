@@ -1,4 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
+import Restaurant from './routes/Restaurant';
+
 import loadable from '@loadable/component';
 
 const MainLayout = loadable(() => import('./layouts/MainLayout'));

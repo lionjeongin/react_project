@@ -1,23 +1,39 @@
-import React, { useState } from "react";
-import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.module.css";
-import { ko } from "date-fns/locale/ko";
+import * as React from 'react';
+import dayjs from 'dayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import Box from '@mui/material/Box';
+import { StaticDateTimePicker } from '@mui/x-date-pickers/StaticDateTimePicker';
+import {
+  DateTimePickerTabs,
+  DateTimePickerTabsProps,
+} from '@mui/x-date-pickers/DateTimePicker';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import AcUnitIcon from '@mui/icons-material/AcUnit';
 
-const ReactDatePicker = () => {
-  registerLocale(ko);
-  setDefaultLocale(ko);
-  const [startDate, setStartDate] = useState(new Date());
+function CustomTabs(props: DateTimePickerTabsProps) {
   return (
-    <DatePicker
-      minDate={new Date()}
-      selected={startDate}
-      onChange={(date) => setStartDate(date)}
-      showTimeSelect
-      timeFormat="HH:mm"
-      timeIntervals={15}
-      timeCaption="time"
-      dateFormat="yyyy년 MMMM d일, aa h:mm"
-    />
+    <React.Fragment>
+      <DateTimePickerTabs {...props} />
+      <Box sx={{ backgroundColor: 'blueviolet', height: 5 }} />
+    </React.Fragment>
   );
-};
-export default ReactDatePicker;
+}
+
+export default function Tabs() {
+  return (
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <StaticDateTimePicker
+        defaultValue={dayjs('2022-04-17')}
+        slots={{ tabs: CustomTabs }}
+        slotProps={{
+          tabs: {
+            hidden: false,
+            dateIcon: <LightModeIcon />,
+            timeIcon: <AcUnitIcon />,
+          },
+        }}
+      />
+    </LocalizationProvider>
+  );
+}
