@@ -41,7 +41,14 @@ const MainMenu = () => {
         >
           {t('뉴스')}
         </NavLink>
+        <NavLink
+          to="/reserve"
+          className={({ isActive }) => classNames({ on: isActive })}
+        >
+          {t('예약')}
+        </NavLink>
       </div>
+
     </MenuBox>
   );
 };
