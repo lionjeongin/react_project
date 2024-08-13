@@ -54,7 +54,7 @@ const App = () => {
           <Route index element={<Reserve />} />
         </Route>
         {/* 식당 페이지 */}
-        <Route path="restaurant">
+        <Route path="/restaurant">
           <Route index element={<RestaurantList/>} />
           <Route path=":id" element={<RestaurantView/>} />
         </Route>
