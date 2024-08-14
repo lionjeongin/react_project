@@ -25,7 +25,7 @@ const ListContainer = () => {
     <>
       <SearchBox search={search} />
       <ItemsBox items={items} />
-      <Pagination search={search}/>
+      <Pagination search={search} />
     </>
   );
 };
