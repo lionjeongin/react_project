@@ -4,9 +4,7 @@ import styled from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
-
 import { FaSearch } from 'react-icons/fa';
-
 import fontSize from '../styles/fontSize';
 import { color } from '../styles/color';
 import logo from '../images/logo.png';
@@ -89,7 +87,8 @@ const Header = () => {
   }, [setIsLogin, setIsAdmin, setUserInfo]);
 
   // 관리자 URL
-const adminUrl = process.env.REACT_APP_ADMIN_URL + "?token=" + cookies.load('token');
+  const adminUrl =
+    process.env.REACT_APP_ADMIN_URL + '?token=' + cookies.load('token');
 
   return (
     <HeaderBox>
